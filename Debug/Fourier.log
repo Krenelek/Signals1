@@ -1,0 +1,4 @@
+﻿  Engine.cpp
+C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(72,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(76,10): warning C4018: '>': signed/unsigned mismatch
+  Fourier.vcxproj -> C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Debug\Fourier.exe
