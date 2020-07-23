@@ -22,19 +22,28 @@ using namespace std;
 
 	vector<complex<double>> Engine::fft(vector<complex<double>> input)
 	{
+		int a = input.size();
+		int b = 0;
+		while (a % 2 == 0)
+		{
+			b++;
+			a = a / 2;
+			
+		}
+		
 		vector <complex<double>> output1, output2;
 		output2 = vector<complex<double>>(input.size(), 0);
-		int a = 2;
+		int step = a;
 		for (int i = 0; i < input.size(); i++)
 		{
 			output2[i] = input[i];
 		}
-		while(a<input.size())
+		while(step <input.size())
 		{
-			output1 = vector<complex<double>>(a, 0);
-			for (int i = 0; i < input.size() / a; i = i + a)
+			output1 = vector<complex<double>>(step, 0);
+			for (int i = 0; i < input.size() / step; i = i + step)
 			{				
-				for (int j = 0; j < a; j++)
+				for (int j = 0; j < step; j++)
 				{
 					output1[j] = output2[i + j];
 				}
@@ -44,7 +53,7 @@ using namespace std;
 					output2[i + j] = output1[j];
 				}
 			}
-			a = a * 2;
+			step = step * 2;
 		}
 		//zamiana 001 100
 		return output2;

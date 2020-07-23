@@ -8,7 +8,7 @@ class Engine
 {
 public:
 	vector<complex<double>> fft(vector<complex<double>> input);
-	//tylko dla 2^n
+	//juz dla wszystkich
 	//poprawka jest prosta - napisaæ j¹, do tego symetria binarna
 	vector<complex<double>> dft(vector<complex<double>> input);
 	Engine(int _size);
