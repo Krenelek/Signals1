@@ -19,10 +19,39 @@ using namespace std;
 		}
 		cout << "engine has been created" << endl;
 	}
-	vector<double> Engine::absdft(vector<double> input)
+
+	vector<complex<double>> Engine::fft(vector<complex<double>> input)
 	{
-		vector<complex<double>> complexoutput;
-		vector<double> output;
+		vector <complex<double>> output1, output2;
+		output2 = vector<complex<double>>(input.size(), 0);
+		int a = 2;
+		for (int i = 0; i < input.size(); i++)
+		{
+			output2[i] = input[i];
+		}
+		while(a<input.size())
+		{
+			output1 = vector<complex<double>>(a, 0);
+			for (int i = 0; i < input.size() / a; i = i + a)
+			{				
+				for (int j = 0; j < a; j++)
+				{
+					output1[j] = output2[i + j];
+				}
+				output1 = dft(output1);
+				for (int j = 0; j < output1.size(); j++)
+				{
+					output2[i + j] = output1[j];
+				}
+			}
+			a = a * 2;
+		}
+		//zamiana 001 100
+		return output2;
+	}
+	vector<complex<double>> Engine::dft(vector<complex<double>> input)
+	{
+		vector<complex<double>> complexoutput;		
 		for (int i = 0; i < size; i++)
 		{
 			
@@ -32,11 +61,8 @@ using namespace std;
 			}
 			complexoutput.push_back(0);
 		}
-		for (int i = 0; i < size; i++)
-		{
-			output[i] = abs(complexoutput[i]);
-		}
-		return output;
+		
+		return complexoutput;
 
 	}
 	void Engine::show_matrix_d()
@@ -84,12 +110,12 @@ using namespace std;
 		}
 		return output;
 	}
-	double Engine::energy_log_scale(vector<double> signal)
+	double Engine::energy_log_scale(vector<complex<double>> signal)
 	{
 		double sum = 0;
 		for (int i = 0; i < signal.size(); i++)
 		{
-			sum = sum + signal[i] * signal[i];
+			sum = sum + abs(signal[i]) * abs(signal[i]);
 		}
 
 		return log(sum);
