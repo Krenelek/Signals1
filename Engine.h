@@ -7,10 +7,14 @@ using namespace std;
 class Engine
 {
 public:
-	vector<complex<double>> fft(vector<complex<double>> input);
+	vector<complex<double>> fft(vector<complex<double>> input);	
 	//juz dla wszystkich
 	//poprawka jest prosta - napisaæ j¹, do tego symetria binarna
+	vector<complex<double>> ifft(vector<complex<double>> input);
+	//matrix inversion
 	vector<complex<double>> dft(vector<complex<double>> input);
+	//potrzebna poprawka ze wzgledu na generowanie non stop macierzy przejscia niepotrzebnie, jakis if
+	vector<complex<double>> idft(vector<complex<double>> input);
 	Engine(int _size);
 	void show_matrix_d();
 	vector<double> convolution(vector<double> signal, vector<double> filter);
@@ -25,5 +29,6 @@ private:
 	vector<double> tab;
 	int size;
 	vector<vector<complex<double>>> matrix;
+	vector<vector<complex<double>>> imatrix;
 };
 

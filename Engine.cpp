@@ -58,6 +58,11 @@ using namespace std;
 		//zamiana 001 100
 		return output2;
 	}
+	vector<complex<double>> Engine::idft(vector<complex<double>> input)
+	{
+
+	}
+
 	vector<complex<double>> Engine::dft(vector<complex<double>> input)
 	{
 		vector<complex<double>> complexoutput;		
