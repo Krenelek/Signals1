@@ -22,12 +22,12 @@ using namespace std;
 	vector<complex<double>> Engine:: even_odd_decomposer(vector<complex<double>> input)
 	{
 		vector<vector<complex<double>>> output = vector<vector<complex<double>>>(2);
-		output[0] = vector<complex<double>>(input.size() / 2,0);
-		output[1]= vector<complex<double>>(input.size() / 2, 0);
-		for (int i = 0; i < (input.size()/2); i++)
+		output[0] = vector<complex<double>>(input.size()>>1,0);
+		output[1]= vector<complex<double>>(input.size()>>1, 0);
+		for (int i = 0; i < (input.size()); i<<1)
 		{
-			output[0][i] = input[2*i];
-			output[1][i] = input[2*i + 1];
+			output[0][i] = input[i];
+			output[1][i] = input[i + 1];
 		}
 		if (input.size() > 2)
 		{
@@ -38,12 +38,42 @@ using namespace std;
 		for (int i = 0; i < output[1].size(); i++)
 		{
 			output2[i] = output[0][i];
-			output2[i + output2.size() / 2] = output[1][i];
+			output2[i + output2.size()>>1] = output[1][i];
 				
 		}
 		return output2;
 		
 
+	}
+	vector<complex<double>> Engine::fixed_fft(vector<complex<double>> input)
+	{
+		//for length of 8192 = 2^13
+		
+
+		vector <complex<double>> output1, output2;
+
+		output2 = even_odd_decomposer(input);		//zamiana 001 100
+		int step = 2;
+		while (step <= 8192)
+		{
+
+			output1 = vector<complex<double>>(step, 0);
+			for (int i = 0; i < 8192; i = i + step)	//butterfly step
+			{
+				for (int j = 0; j < step; j++)
+				{
+					output1[j] = output2[i + j];
+				}
+				output1 = sub_fft(output1);
+				for (int j = 0; j < step; j++)
+				{
+					output2[i + j] = output1[j];
+				}
+
+			}
+			step = step <<1;
+		}
+		return output2;
 	}
 	vector<complex<double>> Engine::fft(vector<complex<double>> input)
 	{
@@ -128,7 +158,7 @@ using namespace std;
 	//do zmiany z fft
 	vector<complex<double>> Engine::sub_fft(vector<complex<double>> input)
 	{
-		int l = input.size() / 2;
+		int l = input.size() >>1;
 		vector<complex<double>> output = vector<complex<double>>(input.size(), 0);
 		for (int i = 0; i < l; i++)
 		{

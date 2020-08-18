@@ -1,29 +1,4 @@
-﻿  Engine.cpp
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(27,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(64,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(72,14): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(76,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(83,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(109,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(112,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(119,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(185,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(191,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(215,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(219,10): warning C4018: '>': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(240,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(242,14): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(247,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(249,15): warning C4244: 'initializing': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Engine.cpp(262,21): warning C4018: '<': signed/unsigned mismatch
-  LINK : C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Debug\Fourier.exe not found or not built by the last incremental link; performing full link
+﻿  Fourier.cpp
+C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Fourier.cpp(21,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Fourier.cpp(62,23): warning C4018: '<': signed/unsigned mismatch
   Fourier.vcxproj -> C:\Users\adamk\OneDrive\Pulpit\c++\Fourier\Debug\Fourier.exe

@@ -11,6 +11,7 @@ public:
 	void show_matrix_d();
 public:
 	vector<complex<double>> fft(vector<complex<double>> input);	
+	vector<complex<double>> fixed_fft(vector<complex<double>> input);
 	vector<complex<double>> ifft(vector<complex<double>> input);// jeszcze nie ma
 
 private:

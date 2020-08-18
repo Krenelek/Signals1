@@ -26,7 +26,7 @@ void write_vector(vector<double> signal)
 }
 int main()
 {
-    cout << setprecision(2) << fixed;
+    cout << setprecision(1) << fixed;
     Engine xd(32);
     cout << "xd" << endl;
     //xd.show_matrix_d();
